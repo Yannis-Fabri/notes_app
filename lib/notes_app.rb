@@ -1,12 +1,16 @@
+require_relative 'note'
+
 class Notes
   
   attr_reader :note
   
-  def note
-    @note = []
+  def init
+    @note = Array.new
   end
   
-  def add(title, *body)
-    p title: title, body: body
+  def add(title, body)
+    list = Note.new(title, body)
+    @note << list
+    #p title: title, body: body
   end
 end

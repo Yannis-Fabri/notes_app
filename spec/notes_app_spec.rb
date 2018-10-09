@@ -2,7 +2,7 @@ require "notes_app"
 
 describe Notes do
   it 'has a balance of zero' do
-    expect(subject.note).to eq([])
+    expect(subject.init).to eq([])
   end
   
   describe "#add" do
@@ -13,9 +13,9 @@ describe Notes do
       subject.send :add, "body", "title"
     end
     
-    #it "confirm add" do
-    #  expect(subject.note).to include add
-    #end
+    it { is_expected.to respond_to(:add).with(2).argument }
+    
+    it { is_expected.to respond_to(Note).with(2).argument }
   end
 
 end
